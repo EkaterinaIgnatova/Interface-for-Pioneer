@@ -1,3 +1,5 @@
+const ip = '192.168.0.141';
+const port = '8000'
 const start = document.querySelector('.button-start');
 const delay = document.querySelector('.buttons-delay');
 const stop = document.querySelector('.button-stop');
@@ -22,7 +24,7 @@ delay.addEventListener(
     (event) => {
         if(event.target.classList.contains('button')){
             const delay = event.target.textContent;
-            fetch(`http://192.168.0.141:8000/button?button=start&delay=${delay}`,
+            fetch(`http://${ip}:${port}/button?button=start&delay=${delay}`,
                 {
                     mode: 'no-cors'
                 })
@@ -33,7 +35,7 @@ delay.addEventListener(
 stop.addEventListener(
     'click',
     () => {
-        fetch(`http://192.168.0.141:8000/button?button=stop`,
+        fetch(`http://${ip}:${port}/button?button=stop`,
             {
                 mode: 'no-cors'
             })
@@ -43,7 +45,7 @@ stop.addEventListener(
 reset.addEventListener(
     'click',
     () => {
-        fetch(`http://192.168.0.141:8000/button?button=reset`,
+        fetch(`http://${ip}:${port}/button?button=reset`,
             {
                 mode: 'no-cors'
             })
@@ -53,7 +55,7 @@ reset.addEventListener(
 log.addEventListener(
     'click',
     () => {
-        fetch(`http://192.168.0.141:8000/button?button=log`,
+        fetch(`http://${ip}:${port}/button?button=log`,
             {
                 mode: 'no-cors'
             })
@@ -62,7 +64,7 @@ log.addEventListener(
 
 setInterval(
     () => {
-    fetch('http://192.168.0.141:8000/data_user')
+    fetch('http://${ip}:${port}/data_user')
         .then(response => response.json())
         .then(data => {
             if(serverVersion.textContent !== (data.server_version).toString()){
