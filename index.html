@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link href="style.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <div class="buttons">
+            <div class="button button-start">Старт игры</div>
+            <div class="buttons-delay hide">
+                <div class="button">0</div>
+                <div class="button">15</div>
+                <div class="button">30</div>
+                <div class="button">60</div>
+            </div>
+            <div class="button button-stop">Стоп игры</div>
+            <div class="button button-reset">Сброс</div>
+            <div class="button button-log">Отправить логи</div>
+        </div>
+        <div class="info">
+            <div class="field server-version">Версия сервера: <span></span></div>
+            <div class="field number-player">Количество игроков: <span></span></div>
+            <div class="field game-status">Статус игры: <span></span></div>
+            <table>
+                <tr>
+                    <th>Номер</th>
+                    <th>Объект управления</th>
+                    <th>Команда</th>
+                    <th>Подключение</th>
+                    <th>Баллы</th>
+                    <th>Заряды</th>
+                    <th>Груз</th>
+                    <th>Блокировка</th>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <script src="main.js"></script>
+</body>
+</html>
