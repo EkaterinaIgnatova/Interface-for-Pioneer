@@ -65,13 +65,13 @@ setInterval(
     fetch('http://192.168.0.141:8000/data_user')
         .then(response => response.json())
         .then(data => {
-            if(serverVersion.textContent !== data.server_version){
+            if(serverVersion.textContent !== (data.server_version).toString()){
                 serverVersion.textContent = `${data.server_version}`;
             }
-            if(gameStatus.textContent !== data.game_status){
+            if(gameStatus.textContent !== (data.game_status).toString()){
                 gameStatus.textContent = `${data.game_status}`;
             }
-            if(numberOfPlayers.textContent !== data.number_player){
+            if(numberOfPlayers.textContent !== (data.number_player).toString()){
                 numberOfPlayers.textContent =`${data.number_player}`;
                 let template = `
                 <tr>
