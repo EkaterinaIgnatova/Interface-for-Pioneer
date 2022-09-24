@@ -64,7 +64,7 @@ log.addEventListener(
 
 setInterval(
     () => {
-    fetch('http://${ip}:${port}/data_user')
+    fetch(`http://${ip}:${port}/data_user`)
         .then(response => response.json())
         .then(data => {
             if(serverVersion.textContent !== (data.server_version).toString()){
@@ -75,7 +75,8 @@ setInterval(
             }
             if(numberOfPlayers.textContent !== (data.number_player).toString()){
                 numberOfPlayers.textContent =`${data.number_player}`;
-                let template = `
+            }
+            let template = `
                 <tr>
                     <th>Номер</th>
                     <th>Объект управления</th>
@@ -86,8 +87,8 @@ setInterval(
                     <th>Груз</th>
                     <th>Блокировка</th>
                 </tr>`;
-                for(let i = 0; i < data.number_player; i++){
-                    template += `
+            for(let i = 0; i < data.number_player; i++){
+                template += `
                     <tr>
                         <td>${i}</td>
                         <td>${data.players[i].object}</td>
@@ -98,9 +99,8 @@ setInterval(
                         <td>${data.players[i].cargo}</td>
                         <td>${data.players[i].blocking}</td>
                     </tr>`;
-                }
-                table.innerHTML = template;
             }
+            table.innerHTML = template;
         })
 }, 1000)
 

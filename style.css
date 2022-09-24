@@ -51,11 +51,11 @@ body{
     display: none;
 }
 
-.field{
+.info-item{
     margin-bottom: 16px;
 }
 
-.field span{
+.info-item span{
     color:  #456969;
     font-weight: bolder;
 }
